@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es"> 
+
+<head>
+<title>Encriptador</title>
+<link rel="shortcut icon" href="imagenes/bloqueado.png">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="reset.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+</head>
+
+<body>
+    
+
+    <header>
+        <div class="encabezado">
+            <div class="logo">
+                <img src="imagenes/Logo.png">
+            </div>
+            <div class="titulo">
+                 <span>Encriptador y desencriptador</span>
+            </div>
+            
+        </div>
+        
+
+    </header>
+
+   
+    <main>
+
+    <section class="parte1">
+      
+        <div class="texto">
+            <textarea  id="texto" cols="50" rows="18" placeholder="Escribe el texto aquí"></textarea>
+        </div>
+        <div class="parrafo">
+            <p>Sólo se procesan letras minúsculas y sin acentos.</p>
+        </div>
+        <div class="botones">
+            <button value="Encriptar" id="encrip" class="encriptar">Encriptar</button>
+            <button value="Desencriptar" id="desencrip" class="desencriptar">Desencriptar</button>
+        </div>
+      
+
+    </section>
+
+    <aside class="parte2">
+        <div class="salida" id="saletex">
+            <div> 
+
+                <textarea id="texencrip"  cols="30" rows="21" placeholder="Resultado..." readonly="readonly"></textarea>
+       
+            </div>
+
+            <div class="dibujo">
+                 <button value="Copiar" id="copy" class="copiar">Copiar</button>
+         
+            </div>
+        </div>
+        
+    </aside>
+    
+    
+
+</main>
+    <footer class="pie">
+
+           <p class="copy">©Copyright Abel Marroquín.</p>
+           <a href="https://www.linkedin.com/in/abel-marroquin-romero-developer/"><img src="imagenes/linkedin.png"  alt="enlace a linkedin" class="link"> </a> 
+        
+    </footer>
+
+    <script  type="text/javascript" src="main.js"></script>
+</body>
+
+
+</html>
+
