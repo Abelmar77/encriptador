@@ -31,6 +31,7 @@ function encriptar(){
 
         let cadena=[];
         salida.value="";
+        let continua=true;
         for (var i = 0; i < ingreso.value.length; i++) {
                     cadena[i]=ingreso.value[i];
                   }
@@ -40,8 +41,9 @@ function encriptar(){
             if((cadena[i].charCodeAt(0)<97&&cadena[i].charCodeAt(0)!=32)||(cadena[i].charCodeAt(0)>122)){
 
                 alert("Ingrese sólo minusculas sin caracteres especiales");
-                copiarB.style.display="none"
                 salida.value="";
+                copiarB.style.display="none"
+                continua=false;
                 break;
             }
             else{
@@ -62,16 +64,17 @@ function encriptar(){
                 if(cadena[i]=="u"){
                     cadena.splice(i, 1, "ufat");
                 }
+
                 salida.value=salida.value+cadena[i];  
-
-                dibujo.style.backgroundImage="url('imagenes/candado1.png')";
-
-                
                 copiarB.style.display="block";     
                 
             }
 
+
                 }
+                if(continua==true){ingreso.value="";
+                dibujo.style.backgroundImage="url('imagenes/candado1.png')";}
+                if(salida.value!=""){copiarB.style.display="block";}
                 
 
     }
@@ -82,14 +85,14 @@ function encriptar(){
     if(ingreso.value==""){
         alert("Ingrese primero algún texto");
         ingreso.placeholder="  <-------- Ingrese su texto aquí"
-        copiarB.style.display="none"
-        salida.value="";
+        
+        if(salida.value!=""){copiarB.style.display="block";}
                         }
 
         else{
 
             let cadena=[];
-            salida.value="";
+            let pasa=true;
             for (var i = 0; i < ingreso.value.length; i++) {
                         cadena[i]=ingreso.value[i];
                       }
@@ -99,16 +102,12 @@ function encriptar(){
                 if((cadena[i].charCodeAt(0)<97&&cadena[i].charCodeAt(0)!=32)||(cadena[i].charCodeAt(0)>122)){
     
                     alert("Ingrese sólo minusculas sin caracteres especiales");
-                    copiarB.style.display="none"
-                    salida.value="";
+
+                    pasa=false;
                     break;
                 }
-                else{
-
-
-            
-
-            salida.value="";
+            }
+                if (pasa){
             let textoDesenc="";
             let result;
             textoDesenc=ingreso.value;
@@ -119,13 +118,16 @@ function encriptar(){
             result= result.replace(/ai/gi, "a");
             result= result.replace(/ufat/gi, "u");
 
+            
+            ingreso.value="";
             salida.value=result;
             dibujo.style.backgroundImage="url('imagenes/candado2.png')";
 
             copiarB.style.display="block";   
 
                 }
-            }
+
+           
 
 
                     
