@@ -37,7 +37,7 @@ function encriptar(){
 
         for (var i = 0; i < cadena.length; i++) {
                   
-            if((cadena[i].charCodeAt(0)<97&&cadena[i].charCodeAt(0)!=32)||(cadena[i].charCodeAt(0)>122&&cadena[i]!='ñ')){
+            if((cadena[i].charCodeAt(0)<97&&cadena[i].charCodeAt(0)!=32)||(cadena[i].charCodeAt(0)>122)){
 
                 alert("Ingrese sólo minusculas sin caracteres especiales");
                 copiarB.style.display="none"
